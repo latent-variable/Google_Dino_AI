@@ -6,6 +6,7 @@
 Neural_Net + Genetic Algorithm = &lt;3 
 Winter break 2018 project 
 ## The Neural Network 
-3 input:
-position of next obstacle 
-Velocity of the grpung 
+**3 Inputs** 
+1.Position of next obstacle. 
+2. Realative velocity of obstacles 
+3. Constant, random range (-1,1)
