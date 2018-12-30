@@ -1,0 +1,104 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/Dino_motion_brain.gd" type="Script" id=1]
+[ext_resource path="res://scripts/CollisionShape2D3.gd" type="Script" id=2]
+[ext_resource path="res://assets/duck1.png" type="Texture" id=3]
+[ext_resource path="res://assets/duck2.png" type="Texture" id=4]
+[ext_resource path="res://assets/dead.png" type="Texture" id=5]
+[ext_resource path="res://assets/running1.png" type="Texture" id=6]
+[ext_resource path="res://assets/running3.png" type="Texture" id=7]
+[ext_resource path="res://assets/running4.png" type="Texture" id=8]
+[ext_resource path="res://scripts/AnimatedSprite.gd" type="Script" id=9]
+[ext_resource path="res://scripts/dino_area.gd" type="Script" id=10]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+custom_solver_bias = 0.0
+extents = Vector2( 9.83787, 11.4513 )
+
+[sub_resource type="SpriteFrames" id=2]
+
+animations = [ {
+"frames": [ ExtResource( 3 ), ExtResource( 4 ) ],
+"loop": true,
+"name": "duck",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "dead",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "running",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "idel",
+"speed": 5.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=3]
+
+custom_solver_bias = 0.0
+extents = Vector2( 60, 58 )
+
+[node name="Dino" type="Node2D"]
+
+_sections_unfolded = [ "Transform" ]
+
+[node name="Dino" type="KinematicBody2D" parent="." index="0"]
+
+input_pickable = false
+collision_layer = 2
+collision_mask = 1
+collision/safe_margin = 0.08
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Transform", "Visibility" ]
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Dino" index="0"]
+
+scale = Vector2( 4.33473, 4.33497 )
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+_sections_unfolded = [ "Transform", "Z Index" ]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Dino" index="1"]
+
+scale = Vector2( 1.26525, 1.26689 )
+frames = SubResource( 2 )
+animation = "running"
+frame = 2
+playing = true
+script = ExtResource( 9 )
+_sections_unfolded = [ "Material", "Transform", "Visibility" ]
+
+[node name="dino_area" type="Area2D" parent="Dino" index="2"]
+
+scale = Vector2( 0.875, 1 )
+input_pickable = true
+gravity_vec = Vector2( 0, 1 )
+gravity = 98.0
+linear_damp = 0.1
+angular_damp = 1.0
+collision_layer = 2
+audio_bus_override = false
+audio_bus_name = "Master"
+script = ExtResource( 10 )
+_sections_unfolded = [ "Collision", "Transform" ]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dino/dino_area" index="0"]
+
+position = Vector2( 2, -15 )
+shape = SubResource( 3 )
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="in_air" from="Dino" to="Dino/AnimatedSprite" method="_on_Dino_in_air"]
+
+[connection signal="on_ground" from="Dino" to="Dino/AnimatedSprite" method="_on_Dino_on_ground"]
+
+[connection signal="area_entered" from="Dino/dino_area" to="Dino" method="_on_dino_area_area_entered"]
+
+

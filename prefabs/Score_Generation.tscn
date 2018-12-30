@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://assets/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://scripts/RichTextLabel.gd" type="Script" id=2]
+
+
+[sub_resource type="DynamicFont" id=2]
+
+resource_local_to_scene = true
+size = 25
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 1 )
+_sections_unfolded = [ "Resource", "Settings" ]
+
+[node name="RichTextLabel" type="RichTextLabel"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 698.0
+margin_top = 10.0
+margin_right = 1334.0
+margin_bottom = 281.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = true
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_fonts/normal_font = SubResource( 2 )
+custom_colors/default_color = Color( 0.0546875, 0.00790405, 0.00790405, 1 )
+custom_colors/selection_color = Color( 0.0429688, 0.041626, 0.041626, 1 )
+bbcode_enabled = false
+bbcode_text = ""
+visible_characters = -1
+percent_visible = 1.0
+meta_underlined = true
+tab_size = 5
+text = "Score: "
+scroll_active = true
+scroll_following = false
+selection_enabled = false
+override_selected_font_color = false
+script = ExtResource( 2 )
+_sections_unfolded = [ "Visibility", "custom_constants", "custom_fonts" ]
+
+
