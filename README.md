@@ -25,4 +25,4 @@ The hidden layer has 3 nodes and use the **tanh** as the activation function.
 The outputs use the **tanh** activation function. Therefore, that ouput ranges from (-1,1).
 One output corresponses to small jump and the other corresponse to big jump. The largest output is selected. But in order to activate the jump the value must be over 0
 
-##Genetic Algorithm 
+## Genetic Algorithm 
