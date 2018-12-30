@@ -18,10 +18,8 @@ func _ready():
 	list.append(cactuse5)
 	count = 5
 	spawn()
-	
 
 func spawn():
-
 	if get_global_position().x > 1000:
 		randomize()
 		var i = randi()%count
@@ -40,7 +38,12 @@ func _process(delta):
 		if obj.get_global_position().x < 0:
 			obj = null
 	else:
-		spawn()
+		
 		Global.Inputs[3] = 4000
 		
 
+
+
+func _on_Timer_timeout():
+	spawn()
+	

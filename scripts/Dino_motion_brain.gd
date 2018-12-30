@@ -94,6 +94,9 @@ func set_weights():
 	
 	
 func Layer1():
+	nodeL11 = 0
+	nodeL12 = 0
+	nodeL13 = 0
 	for i in range(3):
 		nodeL11 += inputs[i] * weights1[i]
 	nodeL11 = tanh(nodeL11)
@@ -105,6 +108,8 @@ func Layer1():
 	nodeL13 = tanh(nodeL13)
 		
 func output():
+	output1 = 0
+	output2 = 0
 	output1 += nodeL11*weights2[0]
 	output1 += nodeL12*weights2[1]
 	output1 += nodeL13*weights2[2]
@@ -117,10 +122,10 @@ func output():
 	output2 = tanh(output2)
 	
 	if output1 > output2 :
-		if output1 > .9:
+		if output1 > 0:
 			motion.y = -800
 	elif output2 > output1 :
-		if output1 > .9:
+		if output1 > 0:
 			motion.y = -900
 #################################
 #Getnetic Algo 

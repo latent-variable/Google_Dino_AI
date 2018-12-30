@@ -40,7 +40,11 @@ func _process(delta):
 		if obj.get_global_position().x < 0:
 			obj = null
 	else:
-		spawn()
+		
 		Global.Inputs[2] = 4000
 		
 
+
+
+func _on_Timer_timeout():
+	spawn()
