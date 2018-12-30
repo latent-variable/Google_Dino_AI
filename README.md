@@ -18,4 +18,4 @@ Winter break 2018 project
 
 **1 Hidden Layer**
 
-The hidden layer has 3 nodes and use the $$tanh$$ as the activation function 
+The hidden layer has 3 nodes and use the **tanh** as the activation function 
