@@ -15,3 +15,7 @@ Winter break 2018 project
 2. Realative velocity of obstacles.
 
 3. Constant, random range (-1,1).
+
+**1 Hidden Layer**
+
+The hidden layer has 3 nodes and use the $tanh as the activation function 
