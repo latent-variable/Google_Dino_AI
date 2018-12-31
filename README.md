@@ -18,7 +18,7 @@ This is a clone of the google dinosaur game made using the [Godot Game engine](h
 
 3. Start the Godot engine and run the project.godot file. 
 
-4.Select Project->Project Settings->AutoLoad-> Add. Add the Gobal.gd script from the scipts folder.
+4. Select Project->Project Settings->AutoLoad-> Add. Add the Gobal.gd script from the scipts folder.
 
 5. Hit play
 
