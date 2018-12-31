@@ -18,7 +18,11 @@ This is a clone of the google dinosaur game made using the [Godot Game engine](h
 
 3. Start the Godot engine and run the project.godot file. 
 
-4. Have fun :) 
+4.Select Project->Project Settings->AutoLoad-> Add. Add the Gobal.gd script from the scipts folde.
+
+5. Hit play
+
+6. Have fun :) 
 
 ## The Neural Network 
 **3 Inputs** 
