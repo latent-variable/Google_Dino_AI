@@ -12,6 +12,9 @@ This is a clone of the google dinosaur game made using the [Godot Game engine](h
 
 **To run this project**
 
+Under the Export Folder there is a executable. 
+
+**To make changes**
 1. First download Godot Version 3.0.6 Stable or latest. 
 
 2. Clone or download the repository.
