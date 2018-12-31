@@ -9,6 +9,7 @@ Winter break 2018 project
 ## The Game
 
 This is a clone of the google dinosaur game made using the [Godot Game engine](https://godotengine.org/). 
+
 **To run this project**
 
 1. First download Godot Version 3.0.6 Stable or latest. 
