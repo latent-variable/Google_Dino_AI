@@ -61,9 +61,11 @@ The score is kept to determin the best candidates for offsprings. The highest sc
 **Selection**
 The two top scoring dinos will pass down there genetic information to the next generation. 70 percent has the higest scoring genetic information, while 30 percent has the genetic information from the second higest scoring dino.  
 
-**crossover**
+**Crossover**
 Then at random genes get swap. 10 percent chance of a specific gene getting swapped by the equivalent from the other parent.
 
-**mutation**
+**Mutation**
 At the same time motation to those genes occure. 10 percent chance of gene mutating. This is represented by adding a random value ranging from (-.5,.5) to the specific gene. 
 
+**NOTE** 
+In order to prevent getting stuck in with random jumping as the optimal solution, 10% of the next generation is made at random, this also helps prevent getting stuck in any local minimun/maximum. 
