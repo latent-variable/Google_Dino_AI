@@ -80,12 +80,11 @@ func get_input():
 	var normalize  =1.0/4000
 	inputs[0] = (temp[0]*normalize)
 	inputs[1] = speed
-	inputs[2] =  rand_range(-1,1)
 	if Global.pterodactyl_b == true:
-		inputs[3] = 1
+		inputs[2] = 1
 	else:
-		inputs[3] =0
-
+		inputs[2] =0
+	inputs[3] =  rand_range(-1,1)
 func set_weights():
 	randomize()
 	for i in range(12):
@@ -137,7 +136,7 @@ func output():
 	elif output2 > output1 :
 		if output1 > 0:
 			motion.y = -900
-	if output3 > .3:
+	if output3 > .3: #hiher treshold to prevent ducking 
 		emit_signal("_duck")
 	else:
 		emit_signal("_stand")

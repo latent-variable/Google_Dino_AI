@@ -45,7 +45,7 @@ animations = [ {
 custom_solver_bias = 0.0
 extents = Vector2( 60, 58 )
 
-[node name="Dino" type="Node2D"]
+[node name="Dino" type="Node2D" index="0"]
 
 _sections_unfolded = [ "Transform" ]
 
@@ -71,6 +71,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 scale = Vector2( 1.26525, 1.26689 )
 frames = SubResource( 2 )
 animation = "running"
+frame = 1
 playing = true
 script = ExtResource( 9 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]

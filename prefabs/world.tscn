@@ -26,7 +26,7 @@ use_filter = false
 font_data = ExtResource( 11 )
 _sections_unfolded = [ "Resource", "Settings" ]
 
-[node name="world" type="Node" index="0"]
+[node name="world" type="Node"]
 
 script = ExtResource( 1 )
 _sections_unfolded = [ "Pause" ]
