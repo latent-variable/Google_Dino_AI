@@ -67,3 +67,5 @@ Then at random genes get swap. 10 percent chance of a specific gene getting swap
 **mutation**
 At the same time motation to those genes occure. 10 percent chance of gene mutating. This is represented by adding a random value ranging from (-.5,.5) to the specific gene. 
 
+**NOTE** 
+In order to prevent getting stuck in with random jumping as the optimal solution, 10% of the next generation is made at random, this also helps prevent getting stuck in any local minimun/maximum. 
