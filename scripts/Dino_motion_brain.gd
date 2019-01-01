@@ -70,7 +70,6 @@ func brain():
 #		motion.y = -800
 	get_input()
 	Layer1()
-#	Layer2()
 	output()
 
 func get_input():
@@ -150,11 +149,9 @@ func selection():
 	if coin_flip > .4:
 		weights1 = Global.Weights11.duplicate()
 		weights2 = Global.Weights21.duplicate()
-#		weights3 = Global.Weights31
 	else:
 		weights1 = Global.Weights12.duplicate()
 		weights2 = Global.Weights22.duplicate()
-#		weights3 = Global.Weights32
 	return coin_flip
 func crossover_mutation(coin_flip):
 	randomize()
@@ -163,34 +160,34 @@ func crossover_mutation(coin_flip):
 		for i in range(12):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
-			if chance > .9:	#1/9 in swapping genes
+			if chance > .9:	#1/10 in swapping genes
 				weights1[i] = Global.Weights12[i]
-			if chance2 > .90:
+			if chance2 > .90:#1/10 mutating genes
 				weights1[i] += rand_range(-.5,.5)
 		#output weights 
 		for i in range(9):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
-			if chance > .9:	#1/9 in swapping genes
+			if chance > .9:#1/10 in swapping genes
 				weights2[i] = Global.Weights22[i]
-			if chance2 > .90:
+			if chance2 > .90:#1/10 mutating genes
 				weights2[i] += rand_range(-.5,.5)
 	else:
 		#input weights 
 		for i in range(12):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
-			if chance > .9:	#1/9 in swapping genes
+			if chance > .9:	#1/10 in swapping genes
 				weights1[i] = Global.Weights11[i]
-			if chance2 > .90:
+			if chance2 > .90:#1/10 mutating genes
 				weights1[i] += rand_range(-.5,.5)
 		#output weights 	
 		for i in range(9):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
-			if chance > .9:	#1/9 in swapping genes
+			if chance > .9:	#1/10 in swapping genes
 				weights2[i] = Global.Weights21[i]
-			if chance2 > .90:
+			if chance2 > .90:#1/10 mutating genes
 				weights2[i] += rand_range(-.5,.5)
 
 	
