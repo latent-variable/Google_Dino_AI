@@ -32,3 +32,13 @@ func _on_Dino_on_ground():
 		set_animation("duck")
 	else:
 		set_animation("running")
+
+
+func _on_Dino__duck():
+	ducking = true
+	set_animation("duck")
+
+
+func _on_Dino__stand():
+	ducking = false
+	set_animation("running")

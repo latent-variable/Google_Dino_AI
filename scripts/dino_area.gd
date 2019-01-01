@@ -15,3 +15,10 @@ func _input(event):
 	elif event.is_action_released("ui_down"):
 		scale.y = 1
 		
+
+func _on_Dino__duck():
+	scale.y = .4
+
+
+func _on_Dino__stand():
+	scale.y = 1

@@ -14,7 +14,6 @@ func _ready():
 func _process(delta):
 	if dcount != Global.Dino_Count:
 		dcount = Global.Dino_Count
-		print("Dinos Alive " + str(dcount))
 	if Global.Dino_Count == 0 or Global.Dino_Count == -1 or Global.Dino_Count == -2 or Global.Dino_Count == -3:
 		if Global.score > Global.High_score:
 			Global.High_score = Global.score

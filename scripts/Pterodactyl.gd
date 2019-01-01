@@ -12,5 +12,9 @@ func _ready():
 
 func _process(delta):
 	#print(get_global_position().x)
+	if get_global_position().x <= 1000:
+		Global.pterodactyl_b = true
+		
 	if get_global_position().x <= 0:
+		Global.pterodactyl_b = false
 		queue_free()

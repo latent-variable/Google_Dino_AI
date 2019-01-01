@@ -7,6 +7,8 @@ signal in_air
 signal on_ground
 signal _alive 
 signal _dead
+signal _duck
+signal _stand
 var pos_y = 0
 var small_jump = false
 var big_jump = false
@@ -24,7 +26,7 @@ var nodeL13 = 0.0
 #Two outputs small jump long jump 
 var output1 = 0.0
 var output2 = 0.0
-#var output3 = 0.0
+var output3 = 0.0
 
 #fitness use in to select best speciment 
 var fitness = 0
@@ -34,12 +36,12 @@ func _ready():
 	pos_y = position.y 
 	#fill input 
 	randomize()
-	for i in range(3):
+	for i in range(4):
 	    inputs.append(0.0)
-		
+	#Prevent getting stuck in local minum by always generating 10% random new dinos 	
 	if Global.Rebirth:
 		var coin_flip = rand_range(0,1)
-		if coin_flip > 0:
+		if coin_flip > .1:
 			#genetic selecetion crossover and mutation 
 			var coin_flip2= selection()
 			crossover_mutation(coin_flip2)
@@ -76,18 +78,19 @@ func get_input():
 	temp.sort()
 	var speed = Global.Groung_speed
 	var normalize  =1.0/4000
-#	for i in range(temp.size()):
-#		inputs[i] = (temp[i]*normalize)
-	#+b 
 	inputs[0] = (temp[0]*normalize)
 	inputs[1] = speed
 	inputs[2] =  rand_range(-1,1)
-	
+	if Global.pterodactyl_b == true:
+		inputs[3] = 1
+	else:
+		inputs[3] =0
+
 func set_weights():
 	randomize()
-	for i in range(9):
+	for i in range(12):
 		weights1.append(rand_range(-1,1))
-	for i in range(6):
+	for i in range(9):
 		weights2.append(rand_range(-1,1))
 #	for i in range(9):
 #		weights3.append(rand_range(-.1,.1))
@@ -97,19 +100,21 @@ func Layer1():
 	nodeL11 = 0
 	nodeL12 = 0
 	nodeL13 = 0
-	for i in range(3):
+	for i in range(4):
 		nodeL11 += inputs[i] * weights1[i]
 	nodeL11 = tanh(nodeL11)
-	for i in range(3,6):
-		nodeL12 += inputs[i-3] * weights1[i]
+	for i in range(4,8):
+		nodeL12 += inputs[i-4] * weights1[i]
 	nodeL12 = tanh(nodeL12)
-	for i in range(6,9):
-		nodeL13 += inputs[i-6] * weights1[i]
+	for i in range(8,12):
+		nodeL13 += inputs[i-8] * weights1[i]
 	nodeL13 = tanh(nodeL13)
 		
 func output():
 	output1 = 0
 	output2 = 0
+	output3 = 0
+	
 	output1 += nodeL11*weights2[0]
 	output1 += nodeL12*weights2[1]
 	output1 += nodeL13*weights2[2]
@@ -121,12 +126,21 @@ func output():
 	output2 += nodeL13*weights2[5]
 	output2 = tanh(output2)
 	
+	output3 += nodeL11*weights2[6]
+	output3 += nodeL12*weights2[7]
+	output3 += nodeL13*weights2[8]
+	output3 = tanh(output2)
+	
 	if output1 > output2 :
 		if output1 > 0:
 			motion.y = -800
 	elif output2 > output1 :
 		if output1 > 0:
 			motion.y = -900
+	if output3 > .3:
+		emit_signal("_duck")
+	else:
+		emit_signal("_stand")
 #################################
 #Getnetic Algo 
 #################################
@@ -146,14 +160,16 @@ func selection():
 func crossover_mutation(coin_flip):
 	randomize()
 	if coin_flip >.4:
-		for i in range(9):
+		#input weights 
+		for i in range(12):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
 			if chance > .9:	#1/9 in swapping genes
 				weights1[i] = Global.Weights12[i]
 			if chance2 > .90:
 				weights1[i] += rand_range(-.5,.5)
-		for i in range(6):
+		#output weights 
+		for i in range(9):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
 			if chance > .9:	#1/9 in swapping genes
@@ -161,15 +177,16 @@ func crossover_mutation(coin_flip):
 			if chance2 > .90:
 				weights2[i] += rand_range(-.5,.5)
 	else:
-		for i in range(9):
+		#input weights 
+		for i in range(12):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
 			if chance > .9:	#1/9 in swapping genes
 				weights1[i] = Global.Weights11[i]
 			if chance2 > .90:
 				weights1[i] += rand_range(-.5,.5)
-			
-		for i in range(6):
+		#output weights 	
+		for i in range(9):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
 			if chance > .9:	#1/9 in swapping genes

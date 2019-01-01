@@ -15,3 +15,5 @@ func _process(delta):
 	add_text("High_Score: " + String(Global.High_score))
 	newline()
 	add_text("Generation: " + String(Global.Generation))
+	newline()
+	add_text("Dinos alive: " + String(Global.Dino_Count))

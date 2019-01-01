@@ -10,6 +10,7 @@ var Fitness1 = 0
 var Fitness2 = 0
 var Inputs = []
 var Groung_speed = 0.0
+var pterodactyl_b = false
 
 var Weights11 = []
 var Weights21 = []

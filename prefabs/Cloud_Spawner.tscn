@@ -2,8 +2,7 @@
 
 [ext_resource path="res://scripts/Cloud_Spawner.gd" type="Script" id=1]
 
-
-[node name="Cloud_Spawner" type="Node2D"]
+[node name="Cloud_Spawner" type="Node2D" index="0"]
 
 script = ExtResource( 1 )
 

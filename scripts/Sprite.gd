@@ -14,4 +14,4 @@ func _process(delta):
 	Global.Groung_speed = -speed / 6000
 	position += Vector2(speed*delta,0)
 	if position.x <= -2390:
-		position.x = 2390
+		position.x = 2388

@@ -7,5 +7,6 @@ func _ready():
 	pass
 
 func _process(delta):
+	speed -= 10*delta
 	position +=  Vector2(speed*delta,0)
 
