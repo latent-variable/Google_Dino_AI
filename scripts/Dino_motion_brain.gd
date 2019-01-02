@@ -41,12 +41,12 @@ func _ready():
 	#Prevent getting stuck in local minum by always generating 10% random new dinos 	
 	if Global.Rebirth:
 		var coin_flip = rand_range(0,1)
-		if coin_flip > .1:
+		if coin_flip < Global.Random_Population:
+			set_weights()	# new random 
+		else:
 			#genetic selecetion crossover and mutation 
 			var coin_flip2= selection()
 			crossover_mutation(coin_flip2)
-		else:
-			set_weights()
 	else:
 		set_weights()
 
@@ -160,52 +160,46 @@ func crossover_mutation(coin_flip):
 		for i in range(12):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
-			if chance > .9:	#1/10 in swapping genes
+			if chance < Global.Crossover:	#1/10 in swapping genes
 				weights1[i] = Global.Weights12[i]
-			if chance2 > .90:#1/10 mutating genes
+			if chance2 < Global.Mutation:#1/10 mutating genes
 				weights1[i] += rand_range(-.5,.5)
 		#output weights 
 		for i in range(9):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
-			if chance > .9:#1/10 in swapping genes
+			if chance < Global.Crossover:#1/10 in swapping genes
 				weights2[i] = Global.Weights22[i]
-			if chance2 > .90:#1/10 mutating genes
+			if chance2< Global.Mutation:#1/10 mutating genes
 				weights2[i] += rand_range(-.5,.5)
 	else:
 		#input weights 
 		for i in range(12):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
-			if chance > .9:	#1/10 in swapping genes
+			if chance < Global.Crossover:	#1/10 in swapping genes
 				weights1[i] = Global.Weights11[i]
-			if chance2 > .90:#1/10 mutating genes
+			if chance2 < Global.Mutation:#1/10 mutating genes
 				weights1[i] += rand_range(-.5,.5)
 		#output weights 	
 		for i in range(9):
 			var chance = rand_range(0,1)
 			var chance2 = rand_range(0,1)
-			if chance > .9:	#1/10 in swapping genes
+			if chance < Global.Crossover:	#1/10 in swapping genes
 				weights2[i] = Global.Weights21[i]
-			if chance2 > .90:#1/10 mutating genes
+			if chance2 < Global.Mutation:#1/10 mutating genes
 				weights2[i] += rand_range(-.5,.5)
 
 	
 func _on_dino_area_area_entered(area):
-	var m = Mutex.new()
-	m.lock()
 	Global.Dino_Count -= 1
 	if Global.score > Global.Fitness1 :
 		Global.Fitness1 = Global.score
+		Global.Weights12 = Global.Weights11.duplicate()
+		Global.Weights22 = Global.Weights21.duplicate()
 		Global.Weights11 = weights1.duplicate()
 		Global.Weights21 = weights2.duplicate()
-#		Global.Weights31 = weights3
-	elif Global.score > Global.Fitness2 :
-		Global.Fitness2= Global.score
-		Global.Weights12 = weights1.duplicate()
-		Global.Weights22 = weights2.duplicate()
-#		Global.Weights32 = weights3
-	m.unlock()
+		
 #	print(get_name()+ " is dead")
 	emit_signal("_dead")
 	queue_free()

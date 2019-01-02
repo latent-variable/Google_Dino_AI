@@ -1,0 +1,422 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://prefabs/Menu.gd" type="Script" id=1]
+[ext_resource path="res://assets/White-Background.jpg" type="Texture" id=2]
+[ext_resource path="res://assets/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://prefabs/NumDIno2.gd" type="Script" id=4]
+[ext_resource path="res://prefabs/Crossover_percent2.gd" type="Script" id=5]
+[ext_resource path="res://prefabs/Mutation2.gd" type="Script" id=6]
+[ext_resource path="res://prefabs/Random pop2.gd" type="Script" id=7]
+[ext_resource path="res://assets/flight1.png" type="Texture" id=8]
+[ext_resource path="res://assets/dead.png" type="Texture" id=9]
+
+[sub_resource type="DynamicFont" id=1]
+
+resource_local_to_scene = true
+size = 30
+use_mipmaps = false
+use_filter = false
+font_data = ExtResource( 3 )
+_sections_unfolded = [ "Resource", "Settings" ]
+
+[node name="Menu" type="Node2D" index="0"]
+
+script = ExtResource( 1 )
+
+[node name="White-Background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 470.92, 477.601 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Initialpop_slider" type="HSlider" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 624.0
+margin_top = 281.0
+margin_right = 824.0
+margin_bottom = 297.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 2.0
+max_value = 200.0
+step = 1.0
+page = 0.0
+value = 50.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Hint", "Rect" ]
+
+[node name="NumDIno2" type="Label" parent="Initialpop_slider" index="0"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 219.0
+margin_top = -6.0
+margin_right = 543.0
+margin_bottom = 21.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 4 )
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="NumDIno" type="Label" parent="Initialpop_slider" index="1"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -349.0
+margin_top = -10.0
+margin_right = -25.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Initial Population"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Crossover_slider" type="HSlider" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 625.0
+margin_top = 330.0
+margin_right = 825.0
+margin_bottom = 346.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Crossover_percent" type="Label" parent="Crossover_slider" index="0"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -392.0
+margin_top = -8.0
+margin_right = -14.0
+margin_bottom = 19.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Crossover Probability"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Crossover_percent2" type="Label" parent="Crossover_slider" index="1"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 214.0
+margin_top = -7.0
+margin_right = 592.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 5 )
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Mutation" type="HSlider" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 628.0
+margin_top = 380.0
+margin_right = 828.0
+margin_bottom = 396.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Mutation" type="Label" parent="Mutation" index="0"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -374.0
+margin_top = -10.0
+margin_right = 4.0
+margin_bottom = 17.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Mutation Probability"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Mutation2" type="Label" parent="Mutation" index="1"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 215.0
+margin_top = -7.0
+margin_right = 593.0
+margin_bottom = 20.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Random generation" type="HSlider" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 628.0
+margin_top = 424.0
+margin_right = 828.0
+margin_bottom = 440.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 0
+min_value = 0.0
+max_value = 1.0
+step = 0.01
+page = 0.0
+value = 0.0
+exp_edit = false
+rounded = false
+editable = true
+tick_count = 0
+ticks_on_borders = false
+focus_mode = 2
+_sections_unfolded = [ "Mouse" ]
+
+[node name="Random pop" type="Label" parent="Random generation" index="0"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -340.0
+margin_top = -9.0
+margin_right = 38.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Random Generation"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Random pop2" type="Label" parent="Random generation" index="1"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 216.0
+margin_top = -9.0
+margin_right = 594.0
+margin_bottom = 18.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 7 )
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Title" type="Label" parent="." index="5"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 356.0
+margin_top = 34.0
+margin_right = 482.0
+margin_bottom = 61.0
+rect_scale = Vector2( 5, 5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "DINO AI"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Sprite" type="Sprite" parent="." index="6"]
+
+editor/display_folded = true
+position = Vector2( 108.221, -36.3534 )
+
+[node name="flight1" type="Sprite" parent="Sprite" index="0"]
+
+position = Vector2( 968.676, 143.881 )
+texture = ExtResource( 8 )
+
+[node name="dead" type="Sprite" parent="Sprite" index="1"]
+
+position = Vector2( 158.447, 154.164 )
+texture = ExtResource( 9 )
+
+[node name="Button" type="Button" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 634.0
+margin_top = 595.0
+margin_right = 670.0
+margin_bottom = 615.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Run"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[connection signal="value_changed" from="Initialpop_slider" to="." method="_on_HSlider_value_changed"]
+
+[connection signal="value_changed" from="Crossover_slider" to="." method="_on_Crossover_slider_value_changed"]
+
+[connection signal="value_changed" from="Mutation" to="." method="_on_Mutation_value_changed"]
+
+[connection signal="value_changed" from="Random generation" to="." method="_on_Random_generation_value_changed"]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+

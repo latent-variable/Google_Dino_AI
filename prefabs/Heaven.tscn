@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/Heaven.gd" type="Script" id=1]
 [ext_resource path="res://prefabs/Create_world.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefabs/Cloud_Spawner.tscn" type="PackedScene" id=3]
+[ext_resource path="res://assets/reload_button.png" type="Texture" id=4]
 
-[node name="Heaven" type="Node"]
+[node name="Heaven" type="Node" index="0"]
 
 script = ExtResource( 1 )
 
@@ -12,11 +13,11 @@ script = ExtResource( 1 )
 
 [node name="Cloud_Spawner" parent="." index="1" instance=ExtResource( 3 )]
 
-position = Vector2( 1079, 382 )
+position = Vector2( 1935.17, 449.999 )
 
 [node name="Jurassic_ParK" type="Node2D" parent="." index="2"]
 
-position = Vector2( 65, 500 )
+position = Vector2( 83.1765, 579.523 )
 _sections_unfolded = [ "Transform" ]
 
 [node name="Timer" type="Timer" parent="." index="3"]
@@ -26,6 +27,60 @@ wait_time = 5.0
 one_shot = false
 autostart = true
 
+[node name="ReloadButton" type="TextureButton" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 147.0
+margin_top = 36.0
+margin_right = 221.0
+margin_bottom = 101.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 4 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="Button" type="Button" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 370.0
+margin_top = 38.0
+margin_right = 430.0
+margin_bottom = 98.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Menu"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+
+[connection signal="pressed" from="ReloadButton" to="." method="_on_ReloadButton_pressed"]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
 

@@ -11,13 +11,19 @@ config_version=3
 [application]
 
 config/name="Dino AI"
-run/main_scene="res://prefabs/Heaven.tscn"
+run/main_scene="res://prefabs/Menu.tscn"
 config/icon="res://icon.png"
 boot_splash/main_loop_type=""
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
+
+[display]
+
+window/size/width=1280
+window/size/height=720
+window/stretch/mode="viewport"
 
 [physics]
 

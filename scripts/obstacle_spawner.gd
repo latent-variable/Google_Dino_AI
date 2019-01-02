@@ -45,4 +45,6 @@ func _process(delta):
 
 
 func _on_Timer_timeout():
-	spawn()
+	if obj == null:
+		spawn()
+	

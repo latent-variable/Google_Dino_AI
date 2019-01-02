@@ -34,7 +34,7 @@ _sections_unfolded = [ "Pause" ]
 [node name="White-Background" type="Sprite" parent="." index="0"]
 
 modulate = Color( 0.984375, 0.976685, 0.976685, 1 )
-position = Vector2( 2645.9, 120.484 )
+position = Vector2( 2671.71, 229.243 )
 rotation = -1.5708
 scale = Vector2( 1, 3 )
 texture = ExtResource( 2 )
@@ -42,7 +42,7 @@ _sections_unfolded = [ "Transform", "Visibility" ]
 
 [node name="floor" type="StaticBody2D" parent="." index="1"]
 
-position = Vector2( 1120, 576 )
+position = Vector2( 1120, 680 )
 input_pickable = false
 collision_layer = 1
 collision_mask = 1
@@ -65,21 +65,33 @@ region_rect = Rect2( -11, 104, 2406, 30 )
 script = ExtResource( 5 )
 _sections_unfolded = [ "Offset", "Region", "Transform" ]
 
-[node name="obstacle_spawner" parent="floor/Sprite" index="0" instance=ExtResource( 6 )]
+[node name="Sprite3" type="Sprite" parent="floor" index="1"]
+
+position = Vector2( 2390, 0.039967 )
+rotation = 3.14159
+texture = ExtResource( 4 )
+flip_h = true
+flip_v = true
+region_enabled = true
+region_rect = Rect2( -11, 104, 2406, 30 )
+script = ExtResource( 5 )
+_sections_unfolded = [ "Offset", "Region", "Transform" ]
+
+[node name="obstacle_spawner" parent="floor/Sprite3" index="0" instance=ExtResource( 6 )]
 
 position = Vector2( -25.942, 15.0399 )
 rotation = -3.14159
 _sections_unfolded = [ "Transform" ]
 
-[node name="OS2" parent="floor/Sprite" index="1" instance=ExtResource( 7 )]
+[node name="OS2" parent="floor/Sprite3" index="1" instance=ExtResource( 7 )]
 
 position = Vector2( -926.508, 15.8203 )
 rotation = 3.14159
 _sections_unfolded = [ "Transform" ]
 
-[node name="Sprite2" type="Sprite" parent="floor" index="1"]
+[node name="Sprite2" type="Sprite" parent="floor" index="2"]
 
-position = Vector2( 2390, 0.039967 )
+position = Vector2( 4780, 0.039967 )
 rotation = 3.14159
 texture = ExtResource( 4 )
 flip_h = true
@@ -101,7 +113,7 @@ position = Vector2( -490, 15.8215 )
 rotation = 3.14159
 _sections_unfolded = [ "Transform" ]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" index="2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="floor" index="3"]
 
 position = Vector2( 1, 16 )
 scale = Vector2( 110, 1.42222 )
@@ -110,10 +122,10 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="RichTextLabel" parent="." index="2" instance=ExtResource( 10 )]
 
-margin_left = 712.0
-margin_top = 2.0
-margin_right = 1204.0
-margin_bottom = 220.0
+margin_left = 795.0
+margin_top = 12.0
+margin_right = 1287.0
+margin_bottom = 230.0
 custom_fonts/normal_font = SubResource( 2 )
 
 
