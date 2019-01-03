@@ -1,5 +1,7 @@
 extends Node
 
+var Initial_Population = 50
+var Random_Population = .1
 var Rebirth = false
 var dead = false
 var score = 0
@@ -20,7 +22,9 @@ var Weights12 = []
 var Weights22 = []
 #var Weights32 = []
 
-var Mutation = .05
+var Mutation = .1
+var Crossover = .1
+
 
 func _ready():
 	for i in range(4):

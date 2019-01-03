@@ -8,6 +8,15 @@ onready var world = $Create_world
 onready var clouds = $Cloud_Spawner
 
 func _ready():
+	Global.Fitness1 = 0.0
+	Global.Fitness2 = 0.0
+	Global.Generation = 1
+	var Weights11 = []
+	var Weights21 = []
+	#var Weights31 = []
+	
+	var Weights12 = []
+	var Weights22 = []
 	spawn_dinos()
 	pass
 
@@ -29,7 +38,8 @@ func _process(delta):
 		
 
 func spawn_dinos():
-	for i in range(100):
+	Global.Dino_Count = 0
+	for i in range(Global.Initial_Population):
 		m.lock()
 		Global.Dino_Count += 1
 		var d = Dino.instance()
@@ -41,3 +51,11 @@ func spawn_dinos():
 func _on_Timer_timeout():
 	clouds._spawn()
 	
+
+
+func _on_ReloadButton_pressed():
+	get_tree().reload_current_scene()
+
+
+func _on_Button_pressed():
+	get_tree().change_scene("res://prefabs/Menu.tscn")
