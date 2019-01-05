@@ -3,6 +3,8 @@
   <img src="https://github.com/lgonz041/Google_Dino_AI/blob/master/icon.png"><br><br>
 </div>
 
+[Video](https://www.youtube.com/watch?v=YwC7KP-TR8E&t=21s)
+
 Neural_Net + Genetic Algorithm = &lt;3 
 
 Winter break 2018 project 
