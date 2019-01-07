@@ -19,7 +19,7 @@ use_filter = false
 font_data = ExtResource( 3 )
 _sections_unfolded = [ "Resource", "Settings" ]
 
-[node name="Menu" type="Node2D" index="0"]
+[node name="Menu" type="Node2D"]
 
 script = ExtResource( 1 )
 
@@ -32,6 +32,7 @@ _sections_unfolded = [ "Transform" ]
 
 [node name="Initialpop_slider" type="HSlider" parent="." index="1"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -110,6 +111,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "c
 
 [node name="Crossover_slider" type="HSlider" parent="." index="2"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -188,6 +190,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "c
 
 [node name="Mutation" type="HSlider" parent="." index="3"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -266,6 +269,7 @@ _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "c
 
 [node name="Random generation" type="HSlider" parent="." index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
@@ -367,7 +371,31 @@ lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Sprite" type="Sprite" parent="." index="6"]
+[node name="Play AI" type="Label" parent="." index="6"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 589.0
+margin_top = 522.0
+margin_right = 913.0
+margin_bottom = 549.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Play  your AI"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Sprite" type="Sprite" parent="." index="7"]
 
 editor/display_folded = true
 position = Vector2( 108.221, -36.3534 )
@@ -382,16 +410,16 @@ texture = ExtResource( 8 )
 position = Vector2( 158.447, 154.164 )
 texture = ExtResource( 9 )
 
-[node name="Button" type="Button" parent="." index="7"]
+[node name="Button" type="Button" parent="." index="8"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 634.0
-margin_top = 595.0
-margin_right = 670.0
-margin_bottom = 615.0
+margin_left = 392.0
+margin_top = 508.0
+margin_right = 428.0
+margin_bottom = 528.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -404,7 +432,34 @@ toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
 group = null
-text = "Run"
+text = "Train"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Button2" type="Button" parent="." index="9"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 933.0
+margin_top = 518.0
+margin_right = 972.0
+margin_bottom = 538.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Play"
 flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
@@ -418,5 +473,7 @@ _sections_unfolded = [ "Rect" ]
 [connection signal="value_changed" from="Random generation" to="." method="_on_Random_generation_value_changed"]
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
 
 

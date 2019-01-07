@@ -13,8 +13,11 @@ func _ready():
 func _process(delta):
 	#print(get_global_position().x)
 	if get_global_position().x <= 1100:
-		Global.pterodactyl_b = true
-		
+		var temp = Global.Inputs.duplicate()
+		temp.sort()
+		if temp[0] == get_global_position().x:
+			Global.pterodactyl_b = true
+	
 	if get_global_position().x <= 0:
 		Global.pterodactyl_b = false
 		queue_free()

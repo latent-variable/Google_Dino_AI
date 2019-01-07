@@ -34,3 +34,8 @@ func _on_Mutation_value_changed(value):
 
 func _on_Random_generation_value_changed(value):
 	Global.Random_Population = value
+
+
+func _on_Button2_pressed():
+	get_tree().change_scene("res://prefabs/Player_world.tscn")
+	

@@ -42,3 +42,7 @@ func _on_Dino__duck():
 func _on_Dino__stand():
 	ducking = false
 	set_animation("running")
+
+
+func _on_DoubleUp_button_pressed():
+	pass # replace with function body

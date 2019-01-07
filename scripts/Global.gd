@@ -22,11 +22,20 @@ var Weights12 = []
 var Weights22 = []
 #var Weights32 = []
 
+var Saved_weights1 = []
+var Saved_weights2 = []
+
 var Mutation = .1
 var Crossover = .1
+
+var EnemyScore = 0
+var PlayerScore = 0
 
 
 func _ready():
 	for i in range(4):
-	    Inputs.append(0.0)
-	
+	    Inputs.append(0)
+	for i in range(12):
+	    Saved_weights1.append(0)
+	for i in range(9):
+	    Saved_weights2.append(0)

@@ -59,3 +59,9 @@ func _on_ReloadButton_pressed():
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://prefabs/Menu.tscn")
+
+
+func _on_Save_pressed():
+	#save best weights to play against. 
+	Global.Saved_weights1 = Global.Weights11
+	Global.Saved_weights2 = Global.Weights21

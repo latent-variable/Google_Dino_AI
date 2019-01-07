@@ -5,7 +5,7 @@
 [ext_resource path="res://prefabs/Cloud_Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/reload_button.png" type="Texture" id=4]
 
-[node name="Heaven" type="Node" index="0"]
+[node name="Heaven" type="Node"]
 
 script = ExtResource( 1 )
 
@@ -51,7 +51,7 @@ group = null
 texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="Button" type="Button" parent="." index="5"]
+[node name="Menu" type="Button" parent="." index="5"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -77,10 +77,38 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
+[node name="Save" type="Button" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 532.0
+margin_top = 39.0
+margin_right = 592.0
+margin_bottom = 99.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Save"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 
 [connection signal="pressed" from="ReloadButton" to="." method="_on_ReloadButton_pressed"]
 
-[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Button_pressed"]
+
+[connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
 
 
