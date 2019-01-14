@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/New_High_score.wav-49edcd09592ce332e17f5b173bcab41f.sample"
+
+[deps]
+
+source_file="res://assets/Sound/New_High_score.wav"
+dest_files=[ "res://.import/New_High_score.wav-49edcd09592ce332e17f5b173bcab41f.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

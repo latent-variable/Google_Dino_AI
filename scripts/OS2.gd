@@ -8,56 +8,43 @@ const pterodactyl = preload("res://prefabs/Pterodactyl.tscn")
 
 var list = Array()
 var count = 0
-var obj = null
-
+var a =0
 
 func _ready():
-	obj = null
 	list.append(cactuse)
 	list.append(cactuse2)
 	list.append(cactuse3)
 	list.append(cactuse4)
 	list.append(cactuse5)
-	list.append(pterodactyl)
-	list.append(pterodactyl)
+	list.append(cactuse4)
+	list.append(cactuse5)
 	list.append(pterodactyl)
 	count = 8
 	spawn()
 	
 
 func spawn():
-	if get_global_position().x > 1000:
-		randomize()
-		var i = randi()%count
-		var enemy
-		if i >= 5: #check for ptreodactyl	
-			enemy = list[i].instance()
-			var pos = Vector2()
-			pos.x = rand_range(-100,200)
-			pos.y = rand_range(-80,-250)			#special y pos
-			enemy.position = pos
-		else:
-			enemy = list[i].instance()
-			var pos = Vector2()
-			pos.x = rand_range(-100,200)
-			pos.y = -25
-			enemy.position = pos
-		obj = enemy
-		get_node("container").add_child(enemy)
-#		yield(get_tree().create_timer(5), "timeout")
+	randomize()
+	a = rand_range(-200,0)
+	var i = randi()%count
+	var enemy
+	if i == 7: #check for ptreodactyl	
+		enemy = list[i].instance()
+		var pos = Vector2()
+		pos.x = rand_range(-200,1000)
+		pos.y = rand_range(-85,-150)			#special y pos
+		enemy.position = pos
+	else:
+		enemy = list[i].instance()
+		var pos = Vector2()
+		pos.x = rand_range(-200,1000)
+		pos.y = -25
+		enemy.position = pos
+	Global.obstacle = enemy
+	get_node("container").add_child(enemy)
 
 func _process(delta):
-	if obj != null:
-		Global.Inputs[1] = obj.get_global_position().x
-		if obj.get_global_position().x < 0:
-			obj = null
-	else:
-		Global.Inputs[1] = 4000
-		
-
-
-
-func _on_Timer_timeout():
-	if obj == null:
-		spawn()
+	if Global.obstacle == null:
+			spawn()
+	
 	

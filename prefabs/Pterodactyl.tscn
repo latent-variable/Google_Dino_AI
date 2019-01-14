@@ -45,7 +45,6 @@ shape = SubResource( 1 )
 
 frames = SubResource( 2 )
 animation = "Flighing"
-frame = 1
 playing = true
 
 

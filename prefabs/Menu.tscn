@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://prefabs/Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/White-Background.jpg" type="Texture" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://prefabs/Random pop2.gd" type="Script" id=7]
 [ext_resource path="res://assets/flight1.png" type="Texture" id=8]
 [ext_resource path="res://assets/dead.png" type="Texture" id=9]
+[ext_resource path="res://assets/information/Info0.png" type="Texture" id=10]
+[ext_resource path="res://prefabs/Panel.gd" type="Script" id=11]
 
 [sub_resource type="DynamicFont" id=1]
 
@@ -25,7 +27,7 @@ script = ExtResource( 1 )
 
 [node name="White-Background" type="Sprite" parent="." index="0"]
 
-position = Vector2( 470.92, 477.601 )
+position = Vector2( 490.916, 332.304 )
 rotation = 1.5708
 texture = ExtResource( 2 )
 _sections_unfolded = [ "Transform" ]
@@ -70,7 +72,7 @@ anchor_right = 0.0
 anchor_bottom = 0.0
 margin_left = 219.0
 margin_top = -6.0
-margin_right = 543.0
+margin_right = 327.0
 margin_bottom = 21.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -353,10 +355,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 356.0
-margin_top = 34.0
-margin_right = 482.0
-margin_bottom = 61.0
+margin_left = 271.0
+margin_top = 88.0
+margin_right = 397.0
+margin_bottom = 115.0
 rect_scale = Vector2( 5, 5 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -378,10 +380,10 @@ anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 589.0
-margin_top = 522.0
-margin_right = 913.0
-margin_bottom = 549.0
+margin_left = 759.0
+margin_top = 597.0
+margin_right = 1083.0
+margin_bottom = 624.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
@@ -389,37 +391,61 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
-text = "Play  your AI"
+text = "Play  your DINO"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Sprite" type="Sprite" parent="." index="7"]
+[node name="Play AI2" type="Label" parent="." index="7"]
+
+modulate = Color( 0.0976562, 0.00534058, 0.00534058, 1 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 271.0
+margin_top = 589.0
+margin_right = 595.0
+margin_bottom = 616.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_fonts/font = SubResource( 1 )
+text = "Train your DINO"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "Visibility", "custom_colors", "custom_fonts", "custom_styles" ]
+
+[node name="Sprite" type="Sprite" parent="." index="8"]
 
 editor/display_folded = true
 position = Vector2( 108.221, -36.3534 )
 
 [node name="flight1" type="Sprite" parent="Sprite" index="0"]
 
-position = Vector2( 968.676, 143.881 )
+position = Vector2( 942.767, 190.147 )
 texture = ExtResource( 8 )
 
 [node name="dead" type="Sprite" parent="Sprite" index="1"]
 
-position = Vector2( 158.447, 154.164 )
+position = Vector2( 60.3639, 200.43 )
 texture = ExtResource( 9 )
 
-[node name="Button" type="Button" parent="." index="8"]
+[node name="Button" type="Button" parent="." index="9"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 392.0
-margin_top = 508.0
-margin_right = 428.0
-margin_bottom = 528.0
+margin_left = 332.0
+margin_top = 494.0
+margin_right = 410.0
+margin_bottom = 538.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -437,16 +463,16 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Button2" type="Button" parent="." index="9"]
+[node name="Button2" type="Button" parent="." index="10"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 933.0
-margin_top = 518.0
-margin_right = 972.0
-margin_bottom = 538.0
+margin_left = 821.0
+margin_top = 495.0
+margin_right = 899.0
+margin_bottom = 539.0
 rect_scale = Vector2( 2, 2 )
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
@@ -464,6 +490,515 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
+[node name="Initial_p0" type="TextureButton" parent="." index="11"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1100.0
+margin_top = 273.0
+margin_right = 1164.0
+margin_bottom = 337.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Panel" type="Panel" parent="Initial_p0" index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.939255 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2209.0
+margin_top = -564.0
+margin_right = 449.0
+margin_bottom = 1001.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 11 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Back" type="Button" parent="Initial_p0/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2101.0
+margin_top = 259.0
+margin_right = 2143.0
+margin_bottom = 279.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Title" type="Label" parent="Initial_p0/Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 881.0
+margin_top = 374.0
+margin_right = 990.0
+margin_bottom = 390.0
+rect_scale = Vector2( 5, 5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Initial population"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Text" type="Label" parent="Initial_p0/Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 266.0
+margin_top = 485.0
+margin_right = 892.0
+margin_bottom = 592.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "This is the number of Dinos that will be generated on each generation. 
+
+The minimum value is 2 and the maximum is 200. There needs to be 
+at least 2 since the top  2 will become the parents of the next generation. 
+However, the higher the number the more likely that one of the Dinos 
+will perform really well from the start.
+
+* Recommend not going over 100. If the game slows down, reduce
+ this number until it is stable. 
+
+* The longer you train the Dinos the better they will perform.
+
+*Use 2x speed to train faster."
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="CrossOver" type="TextureButton" parent="." index="12"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1100.0
+margin_top = 320.0
+margin_right = 1164.0
+margin_bottom = 384.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Panel" type="Panel" parent="CrossOver" index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.939255 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2261.0
+margin_top = -670.0
+margin_right = 397.0
+margin_bottom = 895.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 11 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Back" type="Button" parent="CrossOver/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2101.0
+margin_top = 259.0
+margin_right = 2143.0
+margin_bottom = 279.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Title" type="Label" parent="CrossOver/Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 881.0
+margin_top = 374.0
+margin_right = 990.0
+margin_bottom = 390.0
+rect_scale = Vector2( 5, 5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Crossover Probality"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Text" type="Label" parent="CrossOver/Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 266.0
+margin_top = 485.0
+margin_right = 892.0
+margin_bottom = 592.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "This is the probability that any one of the genes will be crossed-over
+from the parent's gene on to the offspring. In other words the pair of 
+genetic information exchange equal segments with each other.
+
+* Setting this number too high maybe bad for cases in which on parent 
+greatly outperforms the other. 
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Mutation2" type="TextureButton" parent="." index="13"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1100.0
+margin_top = 369.0
+margin_right = 1164.0
+margin_bottom = 433.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Panel" type="Panel" parent="Mutation2" index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.939255 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2254.0
+margin_top = -792.0
+margin_right = 404.0
+margin_bottom = 773.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 11 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Back" type="Button" parent="Mutation2/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2101.0
+margin_top = 259.0
+margin_right = 2143.0
+margin_bottom = 279.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Title" type="Label" parent="Mutation2/Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 881.0
+margin_top = 374.0
+margin_right = 990.0
+margin_bottom = 390.0
+rect_scale = Vector2( 5, 5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Mutation"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Text" type="Label" parent="Mutation2/Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 266.0
+margin_top = 485.0
+margin_right = 892.0
+margin_bottom = 592.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Permanent alteration in the Genetic sequence of each Dino, 
+such that the sequence differs from what is found in most DInos.
+
+* Making this number too large will result in offsprings that
+ are really different from that parents. 
+
+* Making it too small can prevent the Dinos from becoming
+ better than the parents"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Random" type="TextureButton" parent="." index="14"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 1100.0
+margin_top = 411.0
+margin_right = 1164.0
+margin_bottom = 475.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 10 )
+_sections_unfolded = [ "Rect" ]
+
+[node name="Panel" type="Panel" parent="Random" index="0"]
+
+self_modulate = Color( 1, 1, 1, 0.939255 )
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -2249.0
+margin_top = -890.0
+margin_right = 409.0
+margin_bottom = 675.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 11 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Back" type="Button" parent="Random/Panel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 2101.0
+margin_top = 259.0
+margin_right = 2143.0
+margin_bottom = 279.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "Back"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect", "Visibility" ]
+
+[node name="Title" type="Label" parent="Random/Panel" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 881.0
+margin_top = 374.0
+margin_right = 990.0
+margin_bottom = 390.0
+rect_scale = Vector2( 5, 5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Random Generation"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
+[node name="Text" type="Label" parent="Random/Panel" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 266.0
+margin_top = 485.0
+margin_right = 892.0
+margin_bottom = 592.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Random Generation, is the number of random Dinos that are created
+ each Generation after the first since the first generation is made up 
+of entirely random dinos.
+
+*Making this number to large will means that all or most of the 
+Dinos will be random and evolution will be lost. 
+
+*Making this number to small can result in dinos that get
+stuck in a bad solution and don't improve very much.
+"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect", "custom_colors" ]
+
 [connection signal="value_changed" from="Initialpop_slider" to="." method="_on_HSlider_value_changed"]
 
 [connection signal="value_changed" from="Crossover_slider" to="." method="_on_Crossover_slider_value_changed"]
@@ -475,5 +1010,21 @@ _sections_unfolded = [ "Rect" ]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
 
 [connection signal="pressed" from="Button2" to="." method="_on_Button2_pressed"]
+
+[connection signal="pressed" from="Initial_p0" to="Initial_p0/Panel" method="_on_Initial_p0_pressed"]
+
+[connection signal="pressed" from="Initial_p0/Panel/Back" to="Initial_p0/Panel" method="_on_Back_pressed"]
+
+[connection signal="pressed" from="CrossOver" to="CrossOver/Panel" method="_on_Initial_p0_pressed"]
+
+[connection signal="pressed" from="CrossOver/Panel/Back" to="CrossOver/Panel" method="_on_Back_pressed"]
+
+[connection signal="pressed" from="Mutation2" to="Mutation2/Panel" method="_on_Initial_p0_pressed"]
+
+[connection signal="pressed" from="Mutation2/Panel/Back" to="Mutation2/Panel" method="_on_Back_pressed"]
+
+[connection signal="pressed" from="Random" to="Random/Panel" method="_on_Initial_p0_pressed"]
+
+[connection signal="pressed" from="Random/Panel/Back" to="Random/Panel" method="_on_Back_pressed"]
 
 

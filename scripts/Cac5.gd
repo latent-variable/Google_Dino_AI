@@ -11,6 +11,8 @@ func _ready():
 
 
 func _process(delta):
-	#print(get_global_position().x)
-	if get_global_position().x <= 0:
+	position.x += Global.Ground_speed*delta
+	if get_global_position().x <= -50:
+		Global.obstacle = null
 		queue_free()
+	

@@ -31,7 +31,11 @@ var output3 = 0.0
 #fitness use in to select best speciment 
 var fitness = 0
 
+var Mplayer = AudioStreamPlayer.new()
 func _ready():
+	self.add_child(Mplayer)
+	get_viewport().audio_listener_enable_2d = true
+	Mplayer.stream = load("res://assets/Sound/SmallJump.wav")
 	emit_signal("_alive")
 	pos_y = position.y 
 	#fill input 
@@ -53,31 +57,28 @@ func _physics_process(delta):
 	motion = move_and_slide(motion, up)
 
 func brain():
-	#basic brain random input
-#	randomize()
-#	var n = rand_range(0,1)
-#	if n > .98:
-#		motion.y = -800
 	get_input()
 	Layer1()
 	output()
 
 func get_input():
-	var temp = Global.Inputs.duplicate()
-	temp.sort()
-	var speed = Global.Groung_speed
-	var normalize  =1.0/4000
-	inputs[0] = (temp[0]*normalize)
+	var temp = 1300
+	if Global.obstacle != null:
+		temp = Global.obstacle.get_global_position().x
+	var speed = Global.Ground_speed/6000
+	var normalize  =1.0/1200
+	inputs[0] = (temp*normalize)
 	inputs[1] = speed
 	if Global.pterodactyl_b == true:
 		inputs[2] = 1
 	else:
 		inputs[2] =0
 	inputs[3] =  rand_range(-1,1)
+	
 func set_weights():
 	weights1 = Global.Saved_weights1.duplicate()
 	weights2 = Global.Saved_weights2.duplicate()
-	
+
 func Layer1():
 	nodeL11 = 0
 	nodeL12 = 0
@@ -116,9 +117,11 @@ func output():
 	if output1 > output2 :
 		if output1 > 0:
 			motion.y = -800
+			Mplayer.play()
 	elif output2 > output1 :
 		if output1 > 0:
 			motion.y = -900
+			Mplayer.play()
 	if output3 > .3: #hiher treshold to prevent ducking 
 		emit_signal("_duck")
 	else:

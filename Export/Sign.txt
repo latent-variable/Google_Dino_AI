@@ -1,0 +1,3 @@
+sudo keytool -keyalg RSA -genkeypair -dname "cn=Lino Valdovinos, o=Sun, c=US" -alias Dino_AI -keypass theAGIg0ds -keystore Dino_AI.keystore -storepass theAGIg0ds -validity 20000 -sigalg MD5withRSA
+
+keytool -keyalg RSA -genkeypair -alias androiddebugkey -keypass android -keystore debug.keystore -storepass android -dname "CN=Android Debug,O=Android,C=US" -validity 9999 -sigalg MD5withRSA -keyalg RSA

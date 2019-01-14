@@ -8,16 +8,25 @@
 
 config_version=3
 
+[android]
+
+modules="org/godotengine/godot/GodotAdMob"
+
 [application]
 
 config/name="Dino AI"
 run/main_scene="res://prefabs/Menu.tscn"
+boot_splash/image="res://Event Horizon Games.png"
 config/icon="res://icon.png"
 boot_splash/main_loop_type=""
 
 [autoload]
 
 Global="*res://scripts/Global.gd"
+
+[debug]
+
+settings/fps/force_fps=60
 
 [display]
 

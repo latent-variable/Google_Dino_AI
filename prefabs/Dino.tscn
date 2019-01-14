@@ -29,15 +29,15 @@ animations = [ {
 "name": "duck",
 "speed": 10.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "running",
-"speed": 10.0
-}, {
 "frames": [ ExtResource( 6 ) ],
 "loop": true,
 "name": "idel",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "running",
+"speed": 10.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=3]
@@ -71,6 +71,7 @@ _sections_unfolded = [ "Transform", "Z Index" ]
 scale = Vector2( 1.26525, 1.26689 )
 frames = SubResource( 2 )
 animation = "running"
+frame = 1
 playing = true
 script = ExtResource( 9 )
 _sections_unfolded = [ "Material", "Transform", "Visibility" ]
@@ -95,13 +96,13 @@ position = Vector2( 2, -15 )
 shape = SubResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[connection signal="_duck" from="Dino" to="Dino/dino_area" method="_on_Dino__duck"]
-
 [connection signal="_duck" from="Dino" to="Dino/AnimatedSprite" method="_on_Dino__duck"]
 
-[connection signal="_stand" from="Dino" to="Dino/dino_area" method="_on_Dino__stand"]
+[connection signal="_duck" from="Dino" to="Dino/dino_area" method="_on_Dino__duck"]
 
 [connection signal="_stand" from="Dino" to="Dino/AnimatedSprite" method="_on_Dino__stand"]
+
+[connection signal="_stand" from="Dino" to="Dino/dino_area" method="_on_Dino__stand"]
 
 [connection signal="in_air" from="Dino" to="Dino/AnimatedSprite" method="_on_Dino_in_air"]
 

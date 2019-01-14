@@ -5,15 +5,8 @@ extends Node2D
 # var b = "textvar"
 
 func _ready():
-	# Called when the node is added to the scene for the first time.
-	# Initialization here
+	Global.hideBanner()
 	pass
-
-#func _process(delta):
-#	# Called every frame. Delta is time since last frame.
-#	# Update game logic here.
-#	pass
-
 
 func _on_Button_pressed():
 	get_tree().change_scene("res://prefabs/Heaven.tscn")
@@ -39,3 +32,7 @@ func _on_Random_generation_value_changed(value):
 func _on_Button2_pressed():
 	get_tree().change_scene("res://prefabs/Player_world.tscn")
 	
+
+
+func _on_Admob_pressed():
+	get_tree().change_scene("res://prefabs/Ads.tscn")

@@ -56,34 +56,31 @@ func _physics_process(delta):
 	else:
 		emit_signal("on_ground")
 	
-	motion.y += gravity
+	motion.y += gravity * Engine.time_scale
 	
 	if is_on_floor():
 		brain()
 	motion = move_and_slide(motion, up)
 
 func brain():
-	#basic brain random input
-#	randomize()
-#	var n = rand_range(0,1)
-#	if n > .98:
-#		motion.y = -800
 	get_input()
 	Layer1()
 	output()
 
 func get_input():
-	var temp = Global.Inputs.duplicate()
-	temp.sort()
-	var speed = Global.Groung_speed
-	var normalize  =1.0/4000
-	inputs[0] = (temp[0]*normalize)
+	var temp = 1300
+	if Global.obstacle != null:
+		temp = Global.obstacle.get_global_position().x
+	var speed = Global.Ground_speed/6000
+	var normalize  =1.0/1200
+	inputs[0] = (temp*normalize)
 	inputs[1] = speed
 	if Global.pterodactyl_b == true:
 		inputs[2] = 1
 	else:
 		inputs[2] =0
 	inputs[3] =  rand_range(-1,1)
+	
 func set_weights():
 	randomize()
 	for i in range(12):
@@ -139,6 +136,7 @@ func output():
 		emit_signal("_duck")
 	else:
 		emit_signal("_stand")
+		
 #################################
 #Getnetic Algo 
 #################################
@@ -200,7 +198,6 @@ func _on_dino_area_area_entered(area):
 		Global.Weights11 = weights1.duplicate()
 		Global.Weights21 = weights2.duplicate()
 		
-#	print(get_name()+ " is dead")
 	emit_signal("_dead")
 	queue_free()
 

@@ -12,9 +12,12 @@ signal _stand
 var pos_y = 0
 var small_jump = false
 var big_jump = false
-
+var Mplayer = AudioStreamPlayer.new()
 
 func _ready():
+	self.add_child(Mplayer)
+	get_viewport().audio_listener_enable_2d = true
+	Mplayer.stream = load("res://assets/Sound/SmallJump.wav")
 	emit_signal("_alive")
 	pos_y = position.y 
 	
@@ -29,9 +32,11 @@ func _physics_process(delta):
 	
 	if is_on_floor():
 		if small_jump:
+			Mplayer.play()
 			motion.y -= 800
 			small_jump = false
 		if big_jump:
+			Mplayer.play()
 			motion.y -= 900
 			big_jump = false
 	motion = move_and_slide(motion, up)

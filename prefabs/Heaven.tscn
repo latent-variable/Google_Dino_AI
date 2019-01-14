@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scripts/Heaven.gd" type="Script" id=1]
 [ext_resource path="res://prefabs/Create_world.tscn" type="PackedScene" id=2]
 [ext_resource path="res://prefabs/Cloud_Spawner.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/reload_button.png" type="Texture" id=4]
+[ext_resource path="res://prefabs/SavePanel2.gd" type="Script" id=5]
+[ext_resource path="res://prefabs/SavePanel.gd" type="Script" id=6]
+[ext_resource path="res://assets/Double Speed/DoubleSpeedBtn0.png" type="Texture" id=7]
+[ext_resource path="res://prefabs/Timer2.gd" type="Script" id=8]
 
 [node name="Heaven" type="Node"]
 
@@ -17,26 +21,19 @@ position = Vector2( 1935.17, 449.999 )
 
 [node name="Jurassic_ParK" type="Node2D" parent="." index="2"]
 
-position = Vector2( 83.1765, 579.523 )
+position = Vector2( 65, 579.523 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Timer" type="Timer" parent="." index="3"]
-
-process_mode = 1
-wait_time = 5.0
-one_shot = false
-autostart = true
-
-[node name="ReloadButton" type="TextureButton" parent="." index="4"]
+[node name="ReloadButton" type="TextureButton" parent="." index="3"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 147.0
-margin_top = 36.0
-margin_right = 221.0
-margin_bottom = 101.0
+margin_left = 152.0
+margin_top = 133.0
+margin_right = 226.0
+margin_bottom = 198.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -51,16 +48,17 @@ group = null
 texture_normal = ExtResource( 4 )
 _sections_unfolded = [ "Textures" ]
 
-[node name="Menu" type="Button" parent="." index="5"]
+[node name="Menu" type="Button" parent="." index="4"]
 
+editor/display_folded = true
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 370.0
-margin_top = 38.0
-margin_right = 430.0
-margin_bottom = 98.0
+margin_left = 351.0
+margin_top = 140.0
+margin_right = 411.0
+margin_bottom = 200.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -77,16 +75,59 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[node name="Save" type="Button" parent="." index="6"]
+[node name="SavePanel2" type="Panel" parent="Menu" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 532.0
-margin_top = 39.0
-margin_right = 592.0
-margin_bottom = 99.0
+margin_left = -45.0
+margin_top = 112.0
+margin_right = 460.0
+margin_bottom = 243.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 5 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Label" type="Label" parent="Menu/SavePanel2" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 41.0
+margin_top = 33.0
+margin_right = 248.0
+margin_bottom = 55.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Do you want to save your DINO?"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Save" type="Button" parent="." index="5"]
+
+editor/display_folded = true
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 535.0
+margin_top = 140.0
+margin_right = 595.0
+margin_bottom = 200.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 focus_mode = 2
@@ -103,12 +144,118 @@ flat = false
 align = 1
 _sections_unfolded = [ "Rect" ]
 
-[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[node name="SavePanel" type="Panel" parent="Save" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -229.0
+margin_top = 112.0
+margin_right = 276.0
+margin_bottom = 243.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 6 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="Label" type="Label" parent="Save/SavePanel" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 97.0
+margin_top = 28.0
+margin_right = 199.0
+margin_bottom = 50.0
+rect_scale = Vector2( 3, 3 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+text = "Top Dino Saved!"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="DoubleSpeed" type="Button" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 691.0
+margin_top = 135.0
+margin_right = 831.0
+margin_bottom = 269.0
+rect_scale = Vector2( 0.5, 0.5 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+icon = ExtResource( 7 )
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Timer2" type="Label" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 684.0
+margin_top = 210.0
+margin_right = 765.0
+margin_bottom = 249.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "2XSPEED"
+align = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+script = ExtResource( 8 )
+_sections_unfolded = [ "Pause", "custom_colors" ]
+
+[node name="Timer" type="Timer" parent="Timer2" index="0"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
 
 [connection signal="pressed" from="ReloadButton" to="." method="_on_ReloadButton_pressed"]
 
-[connection signal="pressed" from="Menu" to="." method="_on_Button_pressed"]
+[connection signal="pressed" from="Menu" to="." method="_on_Menu_pressed"]
 
 [connection signal="pressed" from="Save" to="." method="_on_Save_pressed"]
+
+[connection signal="pressed" from="Save" to="Save/SavePanel" method="_on_Save_pressed"]
+
+[connection signal="pressed" from="DoubleSpeed" to="." method="_on_DoubleSpeed_pressed"]
+
+[connection signal="timeout" from="Timer2/Timer" to="Timer2" method="_on_Timer_timeout"]
 
 
